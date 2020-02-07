@@ -15,6 +15,7 @@ ls
 
 echo "entering build..."
 mkdir -p build 
+echo "mkdir done"
 cd build 
 echo "running cmake..."
 cmake -DEQEMU_BUILD_LOGIN=ON -DEQEMU_BUILD_LUA=ON -G 'Unix Makefiles' ..
