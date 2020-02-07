@@ -8,7 +8,8 @@ RELEASE_NAME=$(echo $EVENT_DATA | jq -r .release.tag_name)
 
 cd $GITHUB_WORKSPACE
 
-sed -i 's:CURRENT_VERSION .*".*":CURRENT_VERSION "${RELEASE_NAME}":g' common/version.h
+echo "sed"
+#sed -i 's:CURRENT_VERSION .*".*":CURRENT_VERSION "${RELEASE_NAME}":g' common/version.h
 
 echo "build"
 mkdir -p build 
