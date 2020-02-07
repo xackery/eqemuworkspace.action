@@ -48,7 +48,9 @@ RUN apt-get update && apt-get install -y \
 	libsodium18 \
 	libjson-perl \
 	libssl-dev \
-	openssh-server
+	openssh-server \ 
+    jq \
+    upx
 
 RUN echo "eqemu ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/user && \
     chmod 0440 /etc/sudoers.d/user
