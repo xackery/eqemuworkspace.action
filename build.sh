@@ -11,12 +11,13 @@ cd $GITHUB_WORKSPACE
 echo "sed"
 #sed -i 's:CURRENT_VERSION .*".*":CURRENT_VERSION "${RELEASE_NAME}":g' common/version.h
 
+ls
+
 echo "build"
 mkdir -p build 
 cd build 
 echo "cmake"
 cmake -DEQEMU_BUILD_LOGIN=ON -DEQEMU_BUILD_LUA=ON -G 'Unix Makefiles' ..
-cd code/build 
 echo "make"
 make
 echo "final files:"
