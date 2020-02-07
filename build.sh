@@ -13,12 +13,12 @@ echo "sed"
 
 ls
 
-echo "build"
+echo "entering build..."
 mkdir -p build 
 cd build 
-echo "cmake"
+echo "running cmake..."
 cmake -DEQEMU_BUILD_LOGIN=ON -DEQEMU_BUILD_LUA=ON -G 'Unix Makefiles' ..
-echo "make"
+echo "running make..."
 make
 echo "final files:"
 ls
