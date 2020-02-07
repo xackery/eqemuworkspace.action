@@ -15,5 +15,14 @@ echo "Making release $RELEASE_NAME"
 mkdir -p build 
 cd build 
 cmake -DEQEMU_BUILD_LOGIN=ON -DEQEMU_BUILD_LUA=ON -G 'Unix Makefiles' ..
-make
+#make
+
+touch zone 
+touch world
+touch ucs
+touch queryserv
+touch eqlaunch
+touch loginserver
+touch shared_memory
+
 ls
