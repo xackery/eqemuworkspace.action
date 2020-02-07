@@ -13,6 +13,10 @@ echo "sed"
 
 ls
 
+echo "Getting submodules"
+git submodule update --init --recursive --remote
+
+echo "Making release $RELEASE_NAME"
 echo "entering build..."
 mkdir -p build 
 echo "mkdir done"
