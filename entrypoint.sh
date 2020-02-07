@@ -12,7 +12,7 @@ RELEASE_NAME=$(echo $EVENT_DATA | jq -r .release.tag_name)
 
 EXT=''
 
-cd $GITHUB_WORKSPACE/code/build
+cd $GITHUB_WORKSPACE/build
 tar cvfz tmp.tgz "zone" "world" "ucs"
 
 CHECKSUM=$(md5sum tmp.tgz | cut -d ' ' -f 1)

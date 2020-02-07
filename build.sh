@@ -6,7 +6,7 @@ EVENT_DATA=$(cat $GITHUB_EVENT_PATH)
 echo $EVENT_DATA | jq .
 RELEASE_NAME=$(echo $EVENT_DATA | jq -r .release.tag_name)
 
-cd $GITHUB_WORKSPACE/code
+cd $GITHUB_WORKSPACE
 
 sed -i 's:CURRENT_VERSION .*".*":CURRENT_VERSION "${RELEASE_NAME}":g' common/version.h
 
