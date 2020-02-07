@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -euv
+set -uv
 
 EVENT_DATA=$(cat $GITHUB_EVENT_PATH)
 echo $EVENT_DATA | jq .
@@ -15,14 +15,4 @@ echo "Making release $RELEASE_NAME"
 mkdir -p build 
 cd build 
 cmake -DEQEMU_BUILD_LOGIN=ON -DEQEMU_BUILD_LUA=ON -G 'Unix Makefiles' ..
-#make
-
-touch zone 
-touch world
-touch ucs
-touch queryserv
-touch eqlaunch
-touch loginserver
-touch shared_memory
-
-ls
+make
