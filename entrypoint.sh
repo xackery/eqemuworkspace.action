@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -eu
+set -uv
 
 /build.sh
 
@@ -10,10 +10,9 @@ UPLOAD_URL=$(echo $EVENT_DATA | jq -r .release.upload_url)
 UPLOAD_URL=${UPLOAD_URL/\{?name,label\}/}
 RELEASE_NAME=$(echo $EVENT_DATA | jq -r .release.tag_name)
 
-EXT=''
 
 cd $GITHUB_WORKSPACE/build
-tar cvfz tmp.tgz "zone" "world" "ucs"
+tar cvfz tmp.tgz "zone" "world" "ucs" "queryserv" "eqlaunch" "loginserver" "shared_memory"
 
 CHECKSUM=$(md5sum tmp.tgz | cut -d ' ' -f 1)
 
