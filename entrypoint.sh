@@ -1,8 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 set -uv
 
 /build.sh
+
+readlink -f $(which sh)
 
 EVENT_DATA=$(cat $GITHUB_EVENT_PATH)
 echo $EVENT_DATA | jq .
