@@ -16,3 +16,13 @@ mkdir -p build
 cd build 
 cmake -DEQEMU_BUILD_LOGIN=ON -DEQEMU_BUILD_LUA=ON -G 'Unix Makefiles' ..
 make
+
+cd bin
+
+upx zone
+upx world
+upx ucs
+upx queryserv
+upx eqlaunch
+upx loginserver
+upx shared_memory
